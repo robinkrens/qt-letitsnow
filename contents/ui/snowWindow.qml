@@ -25,26 +25,20 @@ import QtQuick.Window 2.2
 ApplicationWindow {
 	
 	id: root;
-	
-	width: 30; height: 30;
-	x: 500; y: 500;
-	//color: "transparent";
-	opacity: 0.5;
-	title: qsTr("Snowy")
 
-	flags: Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint | Qt.WA_TransparentForMouseEvents | Qt.WA_TranslucentBackground | Qt.X11BypassWindowManagerHint;
+	property int dir: (Math.random() * 100) % 2; /* could go either left or right */
+	property int swirl: (Math.random() * 1000) % 55 + 2; /* random falling 'swirl' */
+	property int disposition: 0;
 
+	width: 3; height: 3;
+	//x: 500; y: 500;
+	opacity: 1;
+	//title: qsTr("Snowy")
 
-	//flags: Qt.WA_TranslucentBackground | Qt.X11BypassWindowManagerHint | Qt.WA_TransparentForMouseEvents;
+	flags: Qt.WindowStaysOnTopHint 
+		| Qt.FramelessWindowHint
+		| Qt.WA_TransparentForMouseEvents
+		| Qt.WA_TranslucentBackground 
+		| Qt.X11BypassWindowManagerHint;
 
-	//flags: Qt.WA_TranslucentBackground | Qt.WA_TransparentForMouseEvents| Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint;
-
-	//flags: Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint | Qt.WA_TransparentForMouseEvents | Qt.WA_TranslucentBackground;
-	//color: "transparent";
-
-    //		Text {
-    //	    	anchors.centerIn: parent
-    //	    	color: "red";
-    //	    	text: qsTr("Hello World.")
-    //		}
 }
