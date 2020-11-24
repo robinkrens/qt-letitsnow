@@ -27,18 +27,40 @@ ApplicationWindow {
 	id: root;
 
 	property int dir: (Math.random() * 100) % 2; /* could go either left or right */
+	property int radius: 100; /* size of snowflake */
 	property int swirl: (Math.random() * 1000) % 55 + 2; /* random falling 'swirl' */
 	property int disposition: 0;
+	property alias snowFlakeRotation: snowFlake.rotation;
+	property int rotationSpeed: (Math.random() * 100) % 3 + 1; /* falling rotation */
+	property int rotationDirection: (Math.random() * 100) % 2;
+	property int fallingSpeed: (Math.random() * 100) % 3 + 2;
 
-	width: 3; height: 3;
-	//x: 500; y: 500;
-	opacity: 1;
-	//title: qsTr("Snowy")
+	//width: 80; height: 80;
+	opacity: 0.5;
+	color: "transparent";
 
 	flags: Qt.WindowStaysOnTopHint 
 		| Qt.FramelessWindowHint
 		| Qt.WA_TransparentForMouseEvents
 		| Qt.WA_TranslucentBackground 
 		| Qt.X11BypassWindowManagerHint;
+
+	Rectangle {
+		
+		id: snowFlake;
+		
+		anchors.fill: parent;
+		//radius: 3;
+		color: "transparent";
+		
+		Image {
+			id: snowFlakeImage;
+
+			anchors.fill: parent;
+			source: "../images/snow1.png";
+		}
+
+	}
+
 
 }

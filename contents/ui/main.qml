@@ -32,7 +32,7 @@ Item {
 	id: root;
 	
 	property var snow: [];
-	readonly property int snowCount: 100;
+	readonly property int snowCount: 25;
 	readonly property int screenWidth: Qt.application.screens[0].width;
 	readonly property int screenHeight: Qt.application.screens[0].height;
 	
@@ -45,9 +45,6 @@ Item {
 
 		onClicked: {
 			
-			//var screenWidth = Qt.application.screens[0].width;
-			//var screenHeight = Qt.application.screens[0].height;
-			
 			for (var i = 0; i < snowCount; i++) {
 				
 				var component = Qt.createComponent("snowWindow.qml");
@@ -56,7 +53,10 @@ Item {
 				
 				snow[i].x = Math.random() * screenWidth;
 				snow[i].y = Math.random() * screenHeight;
-				
+
+				snow[i].width = (Math.random() * 100) % snow[i].radius;
+				snow[i].height = snow[i].width;
+
 				snow[i].showMaximized();
 			}
 			
@@ -92,11 +92,33 @@ Item {
 					snow[i].x = 1440;
 				}
 
-				snow[i].y += 2;
+				//snow[i].y += 2;
+				snow[i].y += snow[i].fallingSpeed;
 
 				if (snow[i].y > screenHeight) {
+					//snow[i].y = 0;
+					
+					snow[i].close();
+					snow[i].destroy();
+					
+					var component = Qt.createComponent("snowWindow.qml");
+					snow[i] = component.createObject(root);
+				
+					snow[i].x = Math.random() * screenWidth;
 					snow[i].y = 0;
+					snow[i].width = (Math.random() * 100) % snow[i].radius;
+					snow[i].height = snow[i].width;
+
+					snow[i].showMaximized();
+
 				}
+
+				if(snow[i].rotationDirection == 0) {
+					snow[i].snowFlakeRotation += snow[i].rotationSpeed;
+				} else {
+					snow[i].snowFlakeRotation -= snow[i].rotationSpeed;
+				}
+
 			}
 		}
     	}
