@@ -29,7 +29,6 @@ Item {
     	height: childrenRect.height
     	implicitWidth: pageColumn.implicitWidth
     	implicitHeight: pageColumn.implicitHeight
-	property string cfg_item_color;
 
     	SystemPalette {
         	id: sypal
@@ -41,19 +40,10 @@ Item {
 
         	anchors.left: parent.left
         	PlasmaExtras.Heading {
-            	text: i18nc("Heading for colors", "Item shade color")
+            	text: i18nc("TOD", "No config options (yet)")
             	color: syspal.text
             	level: 3
    	}
-
-	/* User can't specify an exact color, since i'm using
-	 * gradients and alpha for colors */
-	QtControls.ComboBox {
-		id: dot
-		model: ["red", "green", "blue"];
-            	currentIndex: dot.model.indexOf(cfg_item_color)
-            	onActivated: cfg_item_color = model[index]
-	}
 
     }
 }

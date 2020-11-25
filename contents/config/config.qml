@@ -4,8 +4,8 @@ import org.kde.plasma.configuration 2.0
 
 ConfigModel {
     ConfigCategory {
-         name: i18n("Appearance")
-         icon: "view-list-icons"
+         name: i18n("General")
+         icon: "settings-configure"
          source: "ConfigGeneral.qml"
     }
 }
