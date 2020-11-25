@@ -3,7 +3,7 @@ Name=Let it snow!
 Keywords=snow;christmas;newyear;2020
 Comment=Snow taking over your desktop
 Type=Service
-Icon=../plasma/plasmoids/nl.robinkrens.plasma.letitsnow/contents/images/classic.png
+Icon=../plasma/plasmoids/nl.robinkrens.plasma.letitsnow/contents/images/trayicon.png
 X-KDE-ServiceTypes=Plasma/Applet
 
 X-Plasma-API=declarativeappletscript
