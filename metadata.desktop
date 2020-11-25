@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=Snow Everywhere
+Name=Let it snow!
 Keywords=snow;christmas;newyear;2020
-Comment=Let there be snow!
+Comment=Snow taking over your desktop
 Type=Service
-Icon=view-list-icons
+Icon=../plasma/plasmoids/nl.robinkrens.plasma.letitsnow/contents/images/classic.png
 X-KDE-ServiceTypes=Plasma/Applet
 
 X-Plasma-API=declarativeappletscript
@@ -11,7 +11,7 @@ X-Plasma-MainScript=ui/main.qml
 
 X-KDE-PluginInfo-Author=Robin Krens
 X-KDE-PluginInfo-Email=robin@robinkrens.nl
-X-KDE-PluginInfo-Name=nl.robinkrens.plasma.snoweverywhere
+X-KDE-PluginInfo-Name=nl.robinkrens.plasma.letitsnow
 X-KDE-PluginInfo-Version=0.1
 X-KDE-PluginInfo-Website=http://plasma.kde.org/
 X-KDE-PluginInfo-Category=Utilities

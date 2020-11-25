@@ -98,7 +98,7 @@ Item {
 	function updateSnow() {
 
 		if (userSpeed.currentText == '') { // hack
-			console.log('not initialized yet');	
+			//console.log('not initialized yet');	
 			return;
 		}
 
@@ -121,6 +121,9 @@ Item {
 	 * or slowly add/delete new snow flakes  */
 	function updateCount() {
 
+		if (snowFalling == null) // quickhack
+			return; 
+
 		var alreadyRunning = snowFalling.running;
 		
 		destroySnow();
@@ -132,7 +135,11 @@ Item {
 
 	}
 
-	 GridLayout {
+	//Plasmoid.Plasmoid.preferredRepresentation: Plasmoid.fullRepresentation
+	Layout.minimumWidth: units.gridUnit * 13;
+	Layout.minimumHeight: units.gridUnit * 10;
+
+	GridLayout {
                 id: gridLayout
                 rows: 5
                 flow: GridLayout.TopToBottom
@@ -152,6 +159,7 @@ Item {
 		Button { width: 100; text: "Stop"; onClicked: destroySnow(); }
 
 	}
+//}
 
 	Timer {
 
