@@ -35,13 +35,10 @@ ApplicationWindow {
 	property int swirl: getRandomIntInclusive(35,200); /* random falling 'swirl' */
 	property int disposition: 0;
 	property alias snowFlakeRotation: snowFlake.rotation;
-	//property int rotationSpeed: (Math.random() * 100) % 3 + 1; /* falling rotation */
 	property int rotationSpeed: getRandomIntInclusive(1,4);
 	property int rotationDirection: getRandomIntInclusive(0,1);
-	//property int fallingSpeed: (Math.random() * 100) % 3 + 2; 
 	property int fallingSpeed: Utils.getFallingSpeed(plasmoid.configuration.userSpeed);
 
-	//width: 80; height: 80;
 	opacity: 0.5;
 	color: "transparent";
 
@@ -87,7 +84,6 @@ ApplicationWindow {
 
 			anchors.fill: parent;
 			source: setImage(); 
-			//source:  "../images/romantic.png";
 		}
 
 	}

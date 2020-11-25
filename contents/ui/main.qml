@@ -98,7 +98,6 @@ Item {
 	function updateSnow() {
 
 		if (userSpeed.currentText == '') { // hack
-			//console.log('not initialized yet');	
 			return;
 		}
 
@@ -135,8 +134,7 @@ Item {
 
 	}
 
-	//Plasmoid.Plasmoid.preferredRepresentation: Plasmoid.fullRepresentation
-	Layout.minimumWidth: units.gridUnit * 13;
+	Layout.minimumWidth: units.gridUnit * 14;
 	Layout.minimumHeight: units.gridUnit * 10;
 
 	GridLayout {
@@ -159,7 +157,6 @@ Item {
 		Button { width: 100; text: "Stop"; onClicked: destroySnow(); }
 
 	}
-//}
 
 	Timer {
 
@@ -183,7 +180,7 @@ Item {
 				if(snow[i].x > screenWidth) {
 					snow[i].x = 0;
 				} else if (snow[i].x < 0) {
-					snow[i].x = 1440;
+					snow[i].x = screenWidth;
 				}
 
 				snow[i].y += snow[i].fallingSpeed;
